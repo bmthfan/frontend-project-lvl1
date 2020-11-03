@@ -10,8 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/bmthfan/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Bogdan Pugachuk",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/bmthfan/frontend-project-lvl1/issues"
   },
