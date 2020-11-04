@@ -27,6 +27,3 @@ jobs:
         # Run Linter
         run: |
           make lint
-
-      - name: Hexlet project check
-        uses: hexlet/project-action@release
