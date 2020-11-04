@@ -2,5 +2,5 @@
 import promptly from '../src/cli.js';
 console.log('Welcome to the Brain Games!');
 
-const printName = promptly;
-printName();
+const greeting = promptly;
+greeting();
