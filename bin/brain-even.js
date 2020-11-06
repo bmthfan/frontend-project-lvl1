@@ -8,14 +8,15 @@ console.log('Welcome to the Brain Games!');
     const userName = await promptly.prompt('May I have your name?', { silent: true });
     console.log(`Hello, ${userName}!`);
     const randomizer = (max) => Math.floor(Math.random() * Math.floor(max));
-    const questions = [randomizer(100), randomizer(100), randomizer(100)];
+    const randNumber = () => randomizer(100);
+    const questions = [randNumber(), randNumber(), randNumber()];
     const isEven = (num) => {
     if (num % 2 === 0) {
       return 'yes';
     }
 
     return 'no';
-};
+  };
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
     for (let i = 0; i < questions.length;) {
         await (async () => {
@@ -28,8 +29,8 @@ console.log('Welcome to the Brain Games!');
                }
              i += 1;
           } else {
-             console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isEven(questions[i])}'. \nLet's try again, ${userName}!`);
-                i = questions.length;
+            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isEven(questions[i])}'. \nLet's try again, ${userName}!`);
+            i = questions.length;
           }
          })();
     }
