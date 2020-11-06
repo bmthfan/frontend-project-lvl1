@@ -7,3 +7,8 @@
 [![asciicast](https://asciinema.org/a/Iw278fxvkg5rGxch9ZjwtYkxJ.svg)](https://asciinema.org/a/Iw278fxvkg5rGxch9ZjwtYkxJ)
 [![asciicast](https://asciinema.org/a/9SCnlJR3gBAWZtSyBskNUQwOs.svg)](https://asciinema.org/a/9SCnlJR3gBAWZtSyBskNUQwOs)
 [![asciicast](https://asciinema.org/a/7oARKsvav0M2hwzEUnJgG4bkQ.svg)](https://asciinema.org/a/7oARKsvav0M2hwzEUnJgG4bkQ)
+
+### Brain-calc game:
+
+[![asciicast](https://asciinema.org/a/y6hb2wmLBtkHyApJVZl5nwIWg.svg)](https://asciinema.org/a/y6hb2wmLBtkHyApJVZl5nwIWg)
+[![asciicast](https://asciinema.org/a/mMAdcJUDbl9WPlHxzVlpMzqD2.svg)](https://asciinema.org/a/mMAdcJUDbl9WPlHxzVlpMzqD2)
