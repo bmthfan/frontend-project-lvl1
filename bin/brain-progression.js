@@ -39,7 +39,7 @@ console.log('Welcome to the Brain Games!');
         questions[2],
     ];
 
-    console.log('Find the greatest common divisor of given numbers.');
+    console.log('What number is missing in the progression?');
     for (let i = 0; i < questions.length;) {
         await (async () => {
             const userAnswer = await promptly.prompt(`Question: ${questions[i][1]}`, { silent: true, default: '' });
