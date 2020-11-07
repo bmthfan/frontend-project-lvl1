@@ -15,7 +15,7 @@ console.log('Welcome to the Brain Games!');
     const pair1 = cons(randomNumber(), randomNumber());
     const pair2 = cons(randomNumber(), randomNumber());
     const pair3 = cons(randomNumber(), randomNumber());
-    const expression = [
+    const expressions = [
         `${car(pair1)} ${operator()} ${cdr(pair1)}`, 
         `${car(pair2)} ${operator()} ${cdr(pair2)}`, 
         `${car(pair3)} ${operator()} ${cdr(pair3)}`,
@@ -29,7 +29,7 @@ console.log('Welcome to the Brain Games!');
     console.log('What is the result of the expression?');
     for (let i = 0; i < questions.length;) {
         await (async () => {
-            const userAnswer = await promptly.prompt(`Question: ${expression[i]}`, { silent: true, default: '' });
+            const userAnswer = await promptly.prompt(`Question: ${expressions[i]}`, { silent: true, default: '' });
             console.log('Your answer:', userAnswer);
             if (questions[i] === Number(userAnswer)) {
                console.log('Correct!');
