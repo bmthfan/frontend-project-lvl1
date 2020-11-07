@@ -6,11 +6,10 @@ console.log('Welcome to the Brain Games!');
 (async () => {
     const userName = await promptly.prompt('May I have your name?', { silent: true });
     console.log(`Hello, ${userName}!`);
-    const randomizer = (max) => Math.floor(Math.random() * Math.floor(max));
-    const randomNumber = () => randomizer(100);
-    const pair1 = cons(randomNumber(), randomNumber());
-    const pair2 = cons(randomNumber(), randomNumber());
-    const pair3 = cons(randomNumber(), randomNumber());
+    const getRandomNumber = (max) => Math.floor(Math.random() * Math.floor(max));
+    const pair1 = cons(getRandomNumber(100), getRandomNumber(100));
+    const pair2 = cons(getRandomNumber(100), getRandomNumber(100));
+    const pair3 = cons(getRandomNumber(100), getRandomNumber(100));
     const questions = [
         `${car(pair1)} ${cdr(pair1)}`, 
         `${car(pair2)} ${cdr(pair2)}`, 
@@ -41,10 +40,9 @@ console.log('Welcome to the Brain Games!');
                }
                i += 1;
           } else {
-             console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answers[i]}'. \nLet's try again, ${userName}!`);
-                i = questions.length;
-          }
-         })();
+              console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answers[i]}'. \nLet's try again, ${userName}!`);
+              i = questions.length;
+            }
+        })();
     }
-
 })();

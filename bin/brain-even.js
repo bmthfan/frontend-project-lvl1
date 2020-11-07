@@ -7,9 +7,8 @@ console.log('Welcome to the Brain Games!');
 (async () => {
     const userName = await promptly.prompt('May I have your name?', { silent: true });
     console.log(`Hello, ${userName}!`);
-    const randomizer = (max) => Math.floor(Math.random() * Math.floor(max));
-    const randNumber = () => randomizer(100);
-    const questions = [randNumber(), randNumber(), randNumber()];
+    const getRandomNumber = (max) => Math.floor(Math.random() * Math.floor(max));
+    const questions = [getRandomNumber(100), getRandomNumber(100), getRandomNumber(100)];
     const isEven = (num) => {
     if (num % 2 === 0) {
       return 'yes';
