@@ -1,36 +1,28 @@
 #!/usr/bin/env node
-import greeting from '../src/cli.js';
-import promptly from 'promptly';
+import { runGame } from '../src/game-engine.js';
 
-console.log('Welcome to the Brain Games!');
+const gameName = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-(async () => {
-    const userName = await promptly.prompt('May I have your name?', { silent: true });
-    console.log(`Hello, ${userName}!`);
-    const getRandomNumber = (max) => Math.floor(Math.random() * Math.floor(max));
-    const questions = [getRandomNumber(100), getRandomNumber(100), getRandomNumber(100)];
-    const isEven = (num) => {
-    if (num % 2 === 0) {
-      return 'yes';
-    }
+const getRandomNumber = (max) => Math.floor(Math.random() * Math.floor(max));
 
-    return 'no';
-  };
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
-    for (let i = 0; i < questions.length;) {
-        await (async () => {
-          const userAnswer = await promptly.prompt(`Question: ${questions[i]}`, { silent: true, default: '' });
-           console.log('Your answer:', userAnswer);
-            if (isEven(questions[i]) === userAnswer) {
-               console.log('Correct!');
-              if (i > 1) {
-                   console.log(`Congratulations, ${userName}!`);
-               }
-             i += 1;
-          } else {
-            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isEven(questions[i])}'. \nLet's try again, ${userName}!`);
-            i = questions.length;
-          }
-         })();
-    }
-    })();
+const isEven = (num) => {
+  if (num % 2 === 0) {
+    return 'yes';
+  }
+
+  return 'no';
+};
+
+const questions = [
+  getRandomNumber(100), 
+  getRandomNumber(100), 
+  getRandomNumber(100),
+];
+
+const answers = [
+  isEven(questions[0]),
+  isEven(questions[1]),
+  isEven(questions[2]),
+];
+
+runGame(gameName, questions, answers);
