@@ -15,9 +15,9 @@ const isEven = (num) => {
 export const getQuestionAnswerPairs = (countOfRounds) => {
     const questionAnswerPairs = [];
     const questions = [];
-    const question = () => getRandomNumberBetween(0, 100);
-        
+            
     for (let i = 1; i <= countOfRounds; i += 1) {
+        const question = () => getRandomNumberBetween(0, 100);
         questions.push(question());
         const currentQuestion = questions[i - 1];
         const pair = cons(currentQuestion, isEven(currentQuestion));

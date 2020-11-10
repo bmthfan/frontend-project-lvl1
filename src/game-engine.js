@@ -6,8 +6,8 @@ export const getRandomNumberBetween = (beginNumber, endNumber) => Math.floor(Mat
 export const runGame = async (gameName, questionsAnswers) => {
     console.log('Welcome to the Brain Games!');
     const userName = await promptly.prompt('May I have your name?', { silent: true });
-    console.log(`Hello, ${userName}!`);
-    console.log(gameName);
+    console.log(`Hello, ${userName}!\n${gameName}`);
+
     for (const questionAnswer of questionsAnswers) {
         const userAnswer = await promptly.prompt(`Question: ${car(questionAnswer)}`, { silent: true, default: '' });
         const wrongAnswer = `'${userAnswer}' is wrong answer ;(. Correct answer was '${cdr(questionAnswer)}'. \nLet's try again, ${userName}!`;
