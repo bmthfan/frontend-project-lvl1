@@ -1,26 +1,29 @@
 import promptly from 'promptly';
+import { car, cdr } from '@hexlet/pairs';
 
-export const runGame = async (gameName, questions, answers) => {
+export const getRandomNumberBetween = (beginNumber, endNumber) => Math.floor(Math.random() * (endNumber - beginNumber) + beginNumber);
+
+export const runGame = async (gameName, questionsAnswers) => {
     console.log('Welcome to the Brain Games!');
     const userName = await promptly.prompt('May I have your name?', { silent: true });
     console.log(`Hello, ${userName}!`);
-    (async () => {
     console.log(gameName);
-    for (let i = 0; i < questions.length;) {
-        await (async () => {
-            const userAnswer = await promptly.prompt(`Question: ${questions[i]}`, { silent: true, default: '' });
-            console.log('Your answer:', userAnswer);
-            if (answers[i] === userAnswer) {
-                console.log('Correct!');
-                if (i > 1) {
-                    console.log(`Congratulations, ${userName}!`);
-                }
-                i += 1;
-            } else {
-                console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answers[i]}'. \nLet's try again, ${userName}!`);
-                i = questions.length;
+    for (const questionAnswer of questionsAnswers) {
+        const userAnswer = await promptly.prompt(`Question: ${car(questionAnswer)}`, { silent: true, default: '' });
+        const wrongAnswer = `'${userAnswer}' is wrong answer ;(. Correct answer was '${cdr(questionAnswer)}'. \nLet's try again, ${userName}!`;
+        const lastQuestion = questionsAnswers.length - 1;
+
+        console.log('Your answer:', userAnswer);
+        if (userAnswer === String(cdr(questionAnswer))) {
+            console.log('Correct!');
+            if (questionAnswer === questionsAnswers[lastQuestion]) {
+                console.log(`Congratulations, ${userName}!`);
+                break;
             }
-        })();
-    }
-})();
+        }
+        if (userAnswer !== String(cdr(questionAnswer))) {
+            console.log(wrongAnswer);
+            break;
+        }
+    };
 };
