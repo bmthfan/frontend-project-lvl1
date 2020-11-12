@@ -30,7 +30,7 @@ export const getQuestionAnswerPairs = (countOfRounds) => {
         
         question.splice(0, 1);
         question.splice(-1, 1);
-        questions.push(question);
+        questions.push(question.join(' '));
         const currentQuestion = questions[i - 1];
         const pair = cons(currentQuestion, unknownValue);
         questionAnswerPairs.push(pair);
