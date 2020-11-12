@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { cons } from '@hexlet/pairs';
 import { getRandomNumberBetween } from '../game-engine.js';
 
@@ -13,16 +12,16 @@ const isEven = (num) => {
 };
 
 export const getQuestionAnswerPairs = (countOfRounds) => {
-    const questionAnswerPairs = [];
-    const questions = [];
-            
-    for (let i = 1; i <= countOfRounds; i += 1) {
-        const question = () => getRandomNumberBetween(0, 100);
-        questions.push(question());
-        const currentQuestion = questions[i - 1];
-        const pair = cons(currentQuestion, isEven(currentQuestion));
-        questionAnswerPairs.push(pair);
-    }
+  const questionAnswerPairs = [];
+  const questions = [];
 
-    return questionAnswerPairs;
+  for (let i = 1; i <= countOfRounds; i += 1) {
+    const question = () => getRandomNumberBetween(0, 100);
+    questions.push(question());
+    const currentQuestion = questions[i - 1];
+    const pair = cons(currentQuestion, isEven(currentQuestion));
+    questionAnswerPairs.push(pair);
+  }
+
+  return questionAnswerPairs;
 };
