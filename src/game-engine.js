@@ -8,7 +8,8 @@ export const runGame = async (gameName, questionsAnswers) => {
   const userName = await promptly.prompt('May I have your name?', { silent: true });
   console.log(`Hello, ${userName}!\n${gameName}`);
 
-  for (const questionAnswer of questionsAnswers) {
+  for (let i = 0; i <= questionsAnswers.length; i += 1) {
+    const questionAnswer = questionsAnswers[i];
     const userAnswer = await promptly.prompt(`Question: ${car(questionAnswer)}`, { silent: true, default: '' });
     const wrongAnswer = `'${userAnswer}' is wrong answer ;(. Correct answer was '${cdr(questionAnswer)}'. \nLet's try again, ${userName}!`;
     const lastQuestion = questionsAnswers.length - 1;
