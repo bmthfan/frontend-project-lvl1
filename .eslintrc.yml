@@ -1,5 +1,5 @@
 env:
-  es2021: true
+  es2020: true
   node: true
 extends:
   - airbnb-base
@@ -10,4 +10,3 @@ rules:
   no-console: 0
   import/extensions: 0
   no-await-in-loop: 0
-
