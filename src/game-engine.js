@@ -9,7 +9,6 @@ import { progressionGame, getProgressionQuestionsAnswers } from './games/progres
 const makeBrainGame = (game) => {
   let questionsAnswers = '';
   let gameName = '';
-
   switch (game) {
     case 'brain-calc':
       questionsAnswers = getCalcQuestionsAnswers();
@@ -32,7 +31,6 @@ const makeBrainGame = (game) => {
       gameName = progressionGame;
       break;
     default:
-      break;
   }
 
   return cons(gameName, questionsAnswers);
