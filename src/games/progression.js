@@ -1,31 +1,34 @@
 import { cons } from '@hexlet/pairs';
-import { getRandomNumberBetween } from '../game-engine.js';
+import getRandomNumberBetween from '../random-number-generator.js';
 
-export const gameName = 'What number is missing in the progression?';
+export const progressionGame = 'What number is missing in the progression?';
 
-const getProgression = (progressionStep, progressionLength) => {
-  const progressionBegin = getRandomNumberBetween(0, 100);
+const makeProgression = (progressionBegin, progressionStep, progressionLength) => {
+  let beginNumber = progressionBegin;
   const result = [];
-  let num = progressionBegin;
 
   for (let i = 1; i <= progressionLength; i += 1) {
-    const progressionSample = num + progressionStep;
+    const progressionSample = beginNumber + progressionStep;
     result.push(progressionSample);
-    num = progressionSample;
+    beginNumber = progressionSample;
   }
 
   return result;
 };
 
-export const getQuestionAnswerPairs = (countOfRounds) => {
+export const getProgressionQuestionsAnswers = (countOfRounds = 3) => {
   const questionAnswerPairs = [];
   const questions = [];
 
   for (let i = 1; i <= countOfRounds; i += 1) {
-    const question = getProgression(getRandomNumberBetween(1, 11), getRandomNumberBetween(7, 13));
+    const question = makeProgression(
+      getRandomNumberBetween(0, 100),
+      getRandomNumberBetween(1, 11),
+      getRandomNumberBetween(7, 13),
+    );
     question[getRandomNumberBetween(1, question.length - 1)] = '..';
     const indexOfUnknown = question.indexOf('..');
-    const unknownValue = Number(question[indexOfUnknown - 1] + question[indexOfUnknown + 1]) / 2;
+    const unknownValue = String((question[indexOfUnknown - 1] + question[indexOfUnknown + 1]) / 2);
 
     question.splice(0, 1);
     question.splice(-1, 1);

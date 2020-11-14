@@ -1,7 +1,7 @@
 import { cons } from '@hexlet/pairs';
-import { getRandomNumberBetween } from '../game-engine.js';
+import getRandomNumberBetween from '../random-number-generator.js';
 
-export const gameName = 'Find the greatest common divisor of given numbers.';
+export const gcdGame = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (num1, num2) => {
   if (num2 === 0) {
@@ -11,7 +11,7 @@ const gcd = (num1, num2) => {
   return gcd(num2, num1 % num2);
 };
 
-export const getQuestionAnswerPairs = (countOfRounds) => {
+export const getGcdQuestionsAnswers = (countOfRounds = 3) => {
   const questionAnswerPairs = [];
   const questions = [];
 
@@ -22,7 +22,7 @@ export const getQuestionAnswerPairs = (countOfRounds) => {
 
     questions.push(question());
     const currentQuestion = questions[i - 1];
-    const pair = cons(currentQuestion, gcd(firstNumber, secondNumber));
+    const pair = cons(currentQuestion, String(gcd(firstNumber, secondNumber)));
     questionAnswerPairs.push(pair);
   }
 

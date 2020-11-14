@@ -1,7 +1,7 @@
 import { cons } from '@hexlet/pairs';
-import { getRandomNumberBetween } from '../game-engine.js';
+import getRandomNumberBetween from '../random-number-generator.js';
 
-export const gameName = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+export const primeGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -17,7 +17,7 @@ const isPrime = (number) => {
   return 'yes';
 };
 
-export const getQuestionAnswerPairs = (countOfRounds) => {
+export const getPrimeQuestionsAnswers = (countOfRounds = 3) => {
   const questionAnswerPairs = [];
   const questions = [];
 

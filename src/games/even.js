@@ -1,7 +1,7 @@
 import { cons } from '@hexlet/pairs';
-import { getRandomNumberBetween } from '../game-engine.js';
+import getRandomNumberBetween from '../random-number-generator.js';
 
-export const gameName = 'Answer "yes" if the number is even, otherwise answer "no".';
+export const evenGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => {
   if (num % 2 === 0) {
@@ -11,7 +11,7 @@ const isEven = (num) => {
   return 'no';
 };
 
-export const getQuestionAnswerPairs = (countOfRounds) => {
+export const getEvenQuestionsAnswers = (countOfRounds = 3) => {
   const questionAnswerPairs = [];
   const questions = [];
 

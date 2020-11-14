@@ -1,12 +1,12 @@
 import { cons } from '@hexlet/pairs';
-import { getRandomNumberBetween } from '../game-engine.js';
+import getRandomNumberBetween from '../random-number-generator.js';
 
-export const gameName = 'What is the result of the expression?';
+export const calcGame = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
 const getOperator = () => operators[getRandomNumberBetween(0, 3)];
 
-export const getQuestionAnswerPairs = (countOfRounds) => {
+export const getCalcQuestionsAnswers = (countOfRounds = 3) => {
   const questionAnswerPairs = [];
   const questions = [];
 
@@ -32,7 +32,7 @@ export const getQuestionAnswerPairs = (countOfRounds) => {
         break;
     }
     const currentQuestion = questions[i - 1];
-    const pair = cons(currentQuestion, answer);
+    const pair = cons(currentQuestion, String(answer));
     questionAnswerPairs.push(pair);
   }
 
