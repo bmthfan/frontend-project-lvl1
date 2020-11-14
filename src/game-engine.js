@@ -1,5 +1,5 @@
 import promptly from 'promptly';
-import { car, cdr } from '@hexlet/pairs';
+import { cons, car, cdr } from '@hexlet/pairs';
 import { calcGame, getCalcQuestionsAnswers } from './games/calc.js';
 import { evenGame, getEvenQuestionsAnswers } from './games/even.js';
 import { gcdGame, getGcdQuestionsAnswers } from './games/gcd.js';
@@ -7,7 +7,6 @@ import { primeGame, getPrimeQuestionsAnswers } from './games/prime.js';
 import { progressionGame, getProgressionQuestionsAnswers } from './games/progression.js';
 
 const makeBrainGame = (game) => {
-  const result = [];
   let questionsAnswers = '';
   let gameName = '';
 
@@ -36,14 +35,11 @@ const makeBrainGame = (game) => {
       break;
   }
 
-  result.push(gameName);
-  result.push(questionsAnswers);
-
-  return result;
+  return cons(gameName, questionsAnswers);
 };
 export default async (game) => {
-  const gameName = makeBrainGame(game)[0];
-  const questionsAnswers = makeBrainGame(game)[1];
+  const gameName = car(makeBrainGame(game));
+  const questionsAnswers = cdr(makeBrainGame(game));
   const gameLength = questionsAnswers.length;
 
   console.log('Welcome to the Brain Games!');
