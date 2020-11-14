@@ -32,9 +32,9 @@ const makeBrainGame = (game) => {
       break;
     default:
   }
-
   return cons(gameName, questionsAnswers);
 };
+
 export default async (game) => {
   const gameName = car(makeBrainGame(game));
   const questionsAnswers = cdr(makeBrainGame(game));
