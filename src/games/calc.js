@@ -5,7 +5,24 @@ export const calcGame = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
 const getOperator = () => operators[getRandomNumberBetween(0, 3)];
+const getValueOfExpression = (operator, firstNumber, secondNumber) => {
+  let expression = 0;
+  switch (operator) {
+    case '+':
+      expression = firstNumber + secondNumber;
+      break;
+    case '-':
+      expression = firstNumber - secondNumber;
+      break;
+    case '*':
+      expression = firstNumber * secondNumber;
+      break;
+    default:
+      break;
+  }
 
+  return expression;
+};
 export const getCalcQuestionsAnswers = (countOfRounds = 3) => {
   const questionAnswerPairs = [];
   const questions = [];
@@ -15,22 +32,9 @@ export const getCalcQuestionsAnswers = (countOfRounds = 3) => {
     const secondNumber = getRandomNumberBetween(0, 15);
     const operator = getOperator();
     const question = () => `${firstNumber} ${operator} ${secondNumber}`;
-    let answer;
+    const answer = getValueOfExpression(operator, firstNumber, secondNumber);
 
     questions.push(question());
-    switch (operator) {
-      case '+':
-        answer = firstNumber + secondNumber;
-        break;
-      case '-':
-        answer = firstNumber - secondNumber;
-        break;
-      case '*':
-        answer = firstNumber * secondNumber;
-        break;
-      default:
-        break;
-    }
     const currentQuestion = questions[i - 1];
     const pair = cons(currentQuestion, String(answer));
     questionAnswerPairs.push(pair);
