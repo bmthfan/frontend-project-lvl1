@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 import runBrainGame from '../src/game-engine.js';
 
-runBrainGame('even');
+runBrainGame('brain-even');

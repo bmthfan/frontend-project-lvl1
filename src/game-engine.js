@@ -6,52 +6,65 @@ import { gcdGame, getGcdQuestionsAnswers } from './games/gcd.js';
 import { primeGame, getPrimeQuestionsAnswers } from './games/prime.js';
 import { progressionGame, getProgressionQuestionsAnswers } from './games/progression.js';
 
-let questionsAnswers;
-let gameName;
+const makeBrainGame = (game) => {
+  const result = [];
+  let questionsAnswers = '';
+  let gameName = '';
 
-export default async (game) => {
   switch (game) {
-    case 'calc':
+    case 'brain-calc':
       questionsAnswers = getCalcQuestionsAnswers();
       gameName = calcGame;
       break;
-    case 'even':
+    case 'brain-even':
       questionsAnswers = getEvenQuestionsAnswers();
       gameName = evenGame;
       break;
-    case 'gcd':
+    case 'brain-gcd':
       questionsAnswers = getGcdQuestionsAnswers();
       gameName = gcdGame;
       break;
-    case 'prime':
+    case 'brain-prime':
       questionsAnswers = getPrimeQuestionsAnswers();
       gameName = primeGame;
       break;
-    case 'progression':
+    case 'brain-progression':
       questionsAnswers = getProgressionQuestionsAnswers();
       gameName = progressionGame;
       break;
     default:
       break;
   }
+
+  result.push(gameName);
+  result.push(questionsAnswers);
+
+  return result;
+};
+export default async (game) => {
+  const gameName = makeBrainGame(game)[0];
+  const questionsAnswers = makeBrainGame(game)[1];
+  const gameLength = questionsAnswers.length;
+
   console.log('Welcome to the Brain Games!');
   const userName = await promptly.prompt('May I have your name?', { silent: true });
   console.log(`Hello, ${userName}!\n${gameName}`);
 
-  for (let i = 0; i <= questionsAnswers.length; i += 1) {
-    const questionAnswer = questionsAnswers[i];
-    const userAnswer = await promptly.prompt(`Question: ${car(questionAnswer)}`, { silent: true, default: '' });
+  for (let i = 0; i <= gameLength; i += 1) {
+    const question = car(questionsAnswers[i]);
+    const correctAnswer = cdr(questionsAnswers[i]);
+    const userAnswer = await promptly.prompt(`Question: ${question}`, { silent: true, default: '' });
 
     console.log('Your answer:', userAnswer);
-    if (userAnswer === cdr(questionAnswer)) {
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      if (i === questionsAnswers.length - 1) {
+      if (i === gameLength - 1) {
         console.log(`Congratulations, ${userName}!`);
         return;
       }
     }
-    if (userAnswer !== cdr(questionAnswer)) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${cdr(questionAnswer)}'. \nLet's try again, ${userName}!`);
+    if (userAnswer !== correctAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
       break;
     }
   }
