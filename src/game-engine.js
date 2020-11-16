@@ -40,7 +40,7 @@ const makeBrainGame = (game) => {
 export default async (game) => {
   const gameName = car(makeBrainGame(game));
   const questionsAnswers = cdr(makeBrainGame(game));
-  const gameLength = questionsAnswers.length;
+  const gameLength = questionsAnswers.length - 1;
 
   console.log('Welcome to the Brain Games!');
   const userName = await promptly.prompt('May I have your name?', { silent: true });
@@ -54,14 +54,14 @@ export default async (game) => {
     console.log('Your answer:', userAnswer);
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      if (i === gameLength - 1) {
+      if (i === gameLength) {
         console.log(`Congratulations, ${userName}!`);
         return;
       }
     }
     if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
-      break;
+      return;
     }
   }
 };
