@@ -18,7 +18,7 @@ const makeTwoOperandExpression = (operator, operand1, operand2) => {
     case '*':
       return operand1 * operand2;
     default:
-      break;
+      return undefined;
   }
 };
 
