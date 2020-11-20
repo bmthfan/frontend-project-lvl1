@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import runBrainGame from '../src/game-engine.js';
+import runGame from '../src/games/gcd.js';
 
-runBrainGame('brain-gcd');
+runGame();
