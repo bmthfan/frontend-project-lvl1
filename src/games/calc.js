@@ -1,40 +1,39 @@
 import { cons } from '@hexlet/pairs';
 import getRandomNumberBetween from '../random-number-generator.js';
+import gameEngine from '../game-engine.js';
 
-export const calcGame = 'What is the result of the expression?';
-
+const gameName = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
-const getOperator = () => operators[getRandomNumberBetween(0, 3)];
-const getValueOfExpression = (operator, firstNumber, secondNumber) => {
-  let expression = 0;
+
+const getOperator = (index) => operators[index];
+
+const displayTwoOperandExpression = (operator, operand1, operand2) => `${operand1} ${operator} ${operand2}`;
+
+const makeTwoOperandExpression = (operator, operand1, operand2) => {
   switch (operator) {
     case '+':
-      expression = firstNumber + secondNumber;
-      break;
+      return operand1 + operand2;
     case '-':
-      expression = firstNumber - secondNumber;
-      break;
+      return operand1 - operand2;
     case '*':
-      expression = firstNumber * secondNumber;
-      break;
+      return operand1 * operand2;
     default:
-      break;
+      return undefined;
   }
-
-  return expression;
 };
-export const getCalcQuestionsAnswers = (countOfRounds = 3) => {
+
+const getCalcQuestionsAnswers = (countOfRounds = 3) => {
   const questionAnswerPairs = [];
   const questions = [];
 
   for (let i = 1; i <= countOfRounds; i += 1) {
     const firstNumber = getRandomNumberBetween(0, 15);
     const secondNumber = getRandomNumberBetween(0, 15);
-    const operator = getOperator();
-    const question = () => `${firstNumber} ${operator} ${secondNumber}`;
-    const answer = getValueOfExpression(operator, firstNumber, secondNumber);
+    const operator = getOperator(getRandomNumberBetween(0, 3));
+    const question = displayTwoOperandExpression(operator, firstNumber, secondNumber);
+    const answer = makeTwoOperandExpression(operator, firstNumber, secondNumber);
 
-    questions.push(question());
+    questions.push(question);
     const currentQuestion = questions[i - 1];
     const pair = cons(currentQuestion, String(answer));
     questionAnswerPairs.push(pair);
@@ -42,3 +41,5 @@ export const getCalcQuestionsAnswers = (countOfRounds = 3) => {
 
   return questionAnswerPairs;
 };
+
+export default () => gameEngine(gameName, getCalcQuestionsAnswers());

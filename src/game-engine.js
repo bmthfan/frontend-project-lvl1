@@ -1,45 +1,7 @@
 import promptly from 'promptly';
-import { cons, car, cdr } from '@hexlet/pairs';
-import { calcGame, getCalcQuestionsAnswers } from './games/calc.js';
-import { evenGame, getEvenQuestionsAnswers } from './games/even.js';
-import { gcdGame, getGcdQuestionsAnswers } from './games/gcd.js';
-import { primeGame, getPrimeQuestionsAnswers } from './games/prime.js';
-import { progressionGame, getProgressionQuestionsAnswers } from './games/progression.js';
+import { car, cdr } from '@hexlet/pairs';
 
-const makeBrainGame = (game) => {
-  let questionsAnswers = '';
-  let gameName = '';
-
-  switch (game) {
-    case 'brain-calc':
-      questionsAnswers = getCalcQuestionsAnswers();
-      gameName = calcGame;
-      break;
-    case 'brain-even':
-      questionsAnswers = getEvenQuestionsAnswers();
-      gameName = evenGame;
-      break;
-    case 'brain-gcd':
-      questionsAnswers = getGcdQuestionsAnswers();
-      gameName = gcdGame;
-      break;
-    case 'brain-prime':
-      questionsAnswers = getPrimeQuestionsAnswers();
-      gameName = primeGame;
-      break;
-    case 'brain-progression':
-      questionsAnswers = getProgressionQuestionsAnswers();
-      gameName = progressionGame;
-      break;
-    default:
-  }
-
-  return cons(gameName, questionsAnswers);
-};
-
-export default async (game) => {
-  const gameName = car(makeBrainGame(game));
-  const questionsAnswers = cdr(makeBrainGame(game));
+export default async (gameName, questionsAnswers) => {
   const gameLength = questionsAnswers.length - 1;
 
   console.log('Welcome to the Brain Games!');
@@ -54,14 +16,11 @@ export default async (game) => {
     console.log('Your answer:', userAnswer);
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      if (i === gameLength) {
-        console.log(`Congratulations, ${userName}!`);
-        return;
-      }
     }
     if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
       return;
     }
   }
+  console.log(`Congratulations, ${userName}!`);
 };
