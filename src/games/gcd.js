@@ -1,8 +1,8 @@
-import { cons } from '@hexlet/pairs';
 import getRandomNumberBetween from '../random-number-generator.js';
 import gameEngine from '../game-engine.js';
 
-const gameName = 'Find the greatest common divisor of given numbers.';
+const gameRule = 'Find the greatest common divisor of given numbers.';
+const maxGameRounds = 3;
 
 const displayTwoNumbers = (firstNumber, secondNumber) => `${firstNumber} ${secondNumber}`;
 
@@ -14,23 +14,22 @@ const gcd = (num1, num2) => {
   return gcd(num2, num1 % num2);
 };
 
-const getGcdQuestionsAnswers = (countOfRounds = 3) => {
-  const questionAnswerPairs = [];
-  const questions = [];
+const makeQuestionAnswerPairs = (countOfRounds) => {
+  const result = [];
 
   for (let i = 1; i <= countOfRounds; i += 1) {
+    const questionAnswerPair = [];
     const firstNumber = getRandomNumberBetween(0, 100);
     const secondNumber = getRandomNumberBetween(0, 100);
     const question = displayTwoNumbers(firstNumber, secondNumber);
     const answer = gcd(firstNumber, secondNumber);
 
-    questions.push(question);
-    const currentQuestion = questions[i - 1];
-    const pair = cons(currentQuestion, String(answer));
-    questionAnswerPairs.push(pair);
+    questionAnswerPair.push(question);
+    questionAnswerPair.push(String(answer));
+    result.push(questionAnswerPair);
   }
 
-  return questionAnswerPairs;
+  return result;
 };
 
-export default () => gameEngine(gameName, getGcdQuestionsAnswers());
+export default () => gameEngine(gameRule, makeQuestionAnswerPairs(maxGameRounds), maxGameRounds);
