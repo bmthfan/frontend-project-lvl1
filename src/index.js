@@ -1,12 +1,13 @@
 import promptly from 'promptly';
 
-export default async (gameRule, questionAnswerPairs, countOfRounds) => {
+export default async (gameRule, questionAnswerPair, countOfRounds) => {
   console.log('Welcome to the Brain Games!');
   const userName = await promptly.prompt('May I have your name?', { silent: true });
-  console.log(`Hello, ${userName}!\n${gameRule}`);
+  console.log(`Hello, ${userName}!`);
+  console.log(`${gameRule}`);
 
   for (let i = 0; i < countOfRounds; i += 1) {
-    const [question, correctAnswer] = questionAnswerPairs[i];
+    const [question, correctAnswer] = questionAnswerPair();
     const userAnswer = await promptly.prompt(`Question: ${question}`, { silent: true, default: '' });
 
     console.log('Your answer:', userAnswer);
@@ -14,7 +15,8 @@ export default async (gameRule, questionAnswerPairs, countOfRounds) => {
       console.log('Correct!');
     }
     if (userAnswer !== correctAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }

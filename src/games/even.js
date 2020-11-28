@@ -1,31 +1,20 @@
 import getRandomNumberBetween from '../random-number-generator.js';
-import gameEngine from '../game-engine.js';
+import gameEngine from '../index.js';
 
 const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 const maxGameRounds = 3;
 
-const isEven = (num) => {
-  if (num % 2 === 0) {
-    return true;
-  }
+const isEven = (num) => (num % 2 === 0);
 
-  return false;
+const makeQuestionAnswerPair = () => {
+  const questionAnswerPair = [];
+  const question = getRandomNumberBetween(0, 100);
+  const answer = isEven(question) ? 'yes' : 'no';
+
+  questionAnswerPair.push(question);
+  questionAnswerPair.push(answer);
+
+  return questionAnswerPair;
 };
 
-const makeQuestionAnswerPairs = (countOfRounds) => {
-  const result = [];
-
-  for (let i = 1; i <= countOfRounds; i += 1) {
-    const questionAnswerPair = [];
-    const question = getRandomNumberBetween(0, 100);
-    const answer = isEven(question) ? 'yes' : 'no';
-
-    questionAnswerPair.push(question);
-    questionAnswerPair.push(answer);
-    result.push(questionAnswerPair);
-  }
-
-  return result;
-};
-
-export default () => gameEngine(gameRule, makeQuestionAnswerPairs(maxGameRounds), maxGameRounds);
+export default () => gameEngine(gameRule, makeQuestionAnswerPair, maxGameRounds);
