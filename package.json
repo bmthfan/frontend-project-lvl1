@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/bmthfan/frontend-project-lvl1#readme",
   "dependencies": {
-    "@hexlet/pairs": "^1.1.0",
     "promptly": "^3.2.0"
   },
   "devDependencies": {
