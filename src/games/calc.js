@@ -3,7 +3,7 @@ import gameEngine from '../index.js';
 
 const gameRule = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
-const operatorsCount = 3;
+const operatorsCount = operators.length;
 
 const getRandomOperator = () => operators[getRandomNumberBetween(0, operatorsCount)];
 
