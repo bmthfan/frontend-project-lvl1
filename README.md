@@ -42,7 +42,6 @@ $ brain-prime
 [![asciicast](https://asciinema.org/a/kaibMkv7X9AiyHvogEqMPQMEV.svg)](https://asciinema.org/a/kaibMkv7X9AiyHvogEqMPQMEV)
 
 ### Brain-even game:
-[![asciicast](https://asciinema.org/a/Iw278fxvkg5rGxch9ZjwtYkxJ.svg)](https://asciinema.org/a/Iw278fxvkg5rGxch9ZjwtYkxJ)
 [![asciicast](https://asciinema.org/a/9SCnlJR3gBAWZtSyBskNUQwOs.svg)](https://asciinema.org/a/9SCnlJR3gBAWZtSyBskNUQwOs)
 [![asciicast](https://asciinema.org/a/7oARKsvav0M2hwzEUnJgG4bkQ.svg)](https://asciinema.org/a/7oARKsvav0M2hwzEUnJgG4bkQ)
 
