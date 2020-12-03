@@ -2,7 +2,6 @@ import getRandomNumberBetween from '../random-number-generator.js';
 import gameEngine from '../index.js';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const maxGameRounds = 3;
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -19,14 +18,10 @@ const isPrime = (number) => {
 };
 
 const makeQuestionAnswerPair = () => {
-  const questionAnswerPair = [];
   const question = getRandomNumberBetween(0, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
 
-  questionAnswerPair.push(question);
-  questionAnswerPair.push(answer);
-
-  return questionAnswerPair;
+  return [question, answer];
 };
 
-export default () => gameEngine(gameRule, makeQuestionAnswerPair, maxGameRounds);
+export default () => gameEngine(gameRule, makeQuestionAnswerPair);

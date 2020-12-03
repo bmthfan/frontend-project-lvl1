@@ -2,10 +2,10 @@ import getRandomNumberBetween from '../random-number-generator.js';
 import gameEngine from '../index.js';
 
 const gameRule = 'What is the result of the expression?';
-const maxGameRounds = 3;
 const operators = ['+', '-', '*'];
+const operatorsCount = 3;
 
-const getRandomOperator = () => operators[getRandomNumberBetween(0, 3)];
+const getRandomOperator = () => operators[getRandomNumberBetween(0, operatorsCount)];
 
 const calculateExpression = (operator, operand1, operand2) => {
   switch (operator) {
@@ -21,17 +21,13 @@ const calculateExpression = (operator, operand1, operand2) => {
 };
 
 const makeQuestionAnswerPair = () => {
-  const questionAnswerPair = [];
   const firstNumber = getRandomNumberBetween(0, 15);
   const secondNumber = getRandomNumberBetween(0, 15);
   const operator = getRandomOperator();
   const question = `${firstNumber} ${operator} ${secondNumber}`;
   const answer = calculateExpression(operator, firstNumber, secondNumber);
 
-  questionAnswerPair.push(question);
-  questionAnswerPair.push(String(answer));
-
-  return questionAnswerPair;
+  return [question, String(answer)];
 };
 
-export default () => gameEngine(gameRule, makeQuestionAnswerPair, maxGameRounds);
+export default () => gameEngine(gameRule, makeQuestionAnswerPair);
