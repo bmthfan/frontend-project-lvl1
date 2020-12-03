@@ -3,9 +3,8 @@ import gameEngine from '../index.js';
 
 const gameRule = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
-const operatorsCount = operators.length;
 
-const getRandomOperator = () => operators[getRandomNumberBetween(0, operatorsCount)];
+const getRandomOperator = () => operators[getRandomNumberBetween(0, operators.length)];
 
 const calculateExpression = (operator, operand1, operand2) => {
   switch (operator) {
