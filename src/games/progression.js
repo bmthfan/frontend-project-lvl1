@@ -4,13 +4,13 @@ import gameEngine from '../index.js';
 const gameRule = 'What number is missing in the progression?';
 
 const makeProgression = (progressionBegin, progressionStep, progressionLength) => {
-  const result = [];
+  const progression = [];
 
   for (let i = 0; i < progressionLength; i += 1) {
-    result.push(progressionBegin + progressionStep * i);
+    progression.push(progressionBegin + progressionStep * i);
   }
 
-  return result;
+  return progression;
 };
 
 const makeQuestionAnswerPair = () => {

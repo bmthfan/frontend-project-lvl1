@@ -10,9 +10,9 @@ export default async (gameRule, getQuestionAnswerPair) => {
 
   for (let i = 0; i < roundsCount; i += 1) {
     const [question, correctAnswer] = getQuestionAnswerPair();
-    const userAnswer = await promptly.prompt(`Question: ${question}`, { silent: true, default: '' });
+    console.log(`Question: ${question}`);
+    const userAnswer = await promptly.prompt('Your answer:', { default: '' });
 
-    console.log('Your answer:', userAnswer);
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
