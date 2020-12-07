@@ -34,21 +34,21 @@ $ brain-prime
 ## Example
 
 ### Brain-calc game:
-[![asciicast](https://asciinema.org/a/y6hb2wmLBtkHyApJVZl5nwIWg.svg)](https://asciinema.org/a/y6hb2wmLBtkHyApJVZl5nwIWg)
-[![asciicast](https://asciinema.org/a/mMAdcJUDbl9WPlHxzVlpMzqD2.svg)](https://asciinema.org/a/mMAdcJUDbl9WPlHxzVlpMzqD2)
+[![asciicast](https://asciinema.org/a/ISEpuCpInzQD9zkeOlFXtIElX.svg)](https://asciinema.org/a/ISEpuCpInzQD9zkeOlFXtIElX)
+[![asciicast](https://asciinema.org/a/IlgKxqzhvUDLoDdHQ7vmW6tRH.svg)](https://asciinema.org/a/IlgKxqzhvUDLoDdHQ7vmW6tRH)
 
 ### Brain-progression game:
-[![asciicast](https://asciinema.org/a/xD6e8D2wdq43znJgR6hMflS7N.svg)](https://asciinema.org/a/xD6e8D2wdq43znJgR6hMflS7N)
-[![asciicast](https://asciinema.org/a/kaibMkv7X9AiyHvogEqMPQMEV.svg)](https://asciinema.org/a/kaibMkv7X9AiyHvogEqMPQMEV)
+[![asciicast](https://asciinema.org/a/1tnqoYF1nIgEYX1Jx1hWMAcRl.svg)](https://asciinema.org/a/1tnqoYF1nIgEYX1Jx1hWMAcRl)
+[![asciicast](https://asciinema.org/a/LLYrYpXIG7aDp8f3RNyl1fDHp.svg)](https://asciinema.org/a/LLYrYpXIG7aDp8f3RNyl1fDHp)
 
 ### Brain-even game:
-[![asciicast](https://asciinema.org/a/9SCnlJR3gBAWZtSyBskNUQwOs.svg)](https://asciinema.org/a/9SCnlJR3gBAWZtSyBskNUQwOs)
-[![asciicast](https://asciinema.org/a/7oARKsvav0M2hwzEUnJgG4bkQ.svg)](https://asciinema.org/a/7oARKsvav0M2hwzEUnJgG4bkQ)
+[![asciicast](https://asciinema.org/a/QSa37zsV6dAveCUrtsCFgraGr.svg)](https://asciinema.org/a/QSa37zsV6dAveCUrtsCFgraGr)
+[![asciicast](https://asciinema.org/a/T1JyOEWZgA9HnIVLUFivKDPBV.svg)](https://asciinema.org/a/T1JyOEWZgA9HnIVLUFivKDPBV)
 
 ### Brain-gcd game:
-[![asciicast](https://asciinema.org/a/uAZXJ29fhkxWk3sRRkaolH5HT.svg)](https://asciinema.org/a/uAZXJ29fhkxWk3sRRkaolH5HT)
-[![asciicast](https://asciinema.org/a/O1pf7byDnvebbuvHyynpzIhCv.svg)](https://asciinema.org/a/O1pf7byDnvebbuvHyynpzIhCv)
+[![asciicast](https://asciinema.org/a/djpe2yP6uYOnn84yzXDWtIx1E.svg)](https://asciinema.org/a/djpe2yP6uYOnn84yzXDWtIx1E)
+[![asciicast](https://asciinema.org/a/ovXf7oDXX3mmnPxyql2y93Xqs.svg)](https://asciinema.org/a/ovXf7oDXX3mmnPxyql2y93Xqs)
 
 ### Brain-prime game:
-[![asciicast](https://asciinema.org/a/eoujky923Ic0cgt9QgBHFtFDa.svg)](https://asciinema.org/a/eoujky923Ic0cgt9QgBHFtFDa)
-[![asciicast](https://asciinema.org/a/j5nzMWHdqY1VoLPfTyRwagXdY.svg)](https://asciinema.org/a/j5nzMWHdqY1VoLPfTyRwagXdY)
+[![asciicast](https://asciinema.org/a/JIJ7fOkC68Xn29zqsP31K6tqs.svg)](https://asciinema.org/a/JIJ7fOkC68Xn29zqsP31K6tqs)
+[![asciicast](https://asciinema.org/a/9p2nl77VdFiFyLQKeHSClt0kB.svg)](https://asciinema.org/a/9p2nl77VdFiFyLQKeHSClt0kB)
