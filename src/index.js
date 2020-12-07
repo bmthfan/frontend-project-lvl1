@@ -4,7 +4,7 @@ const roundsCount = 3;
 
 export default async (gameRule, getQuestionAnswerPair) => {
   console.log('Welcome to the Brain Games!');
-  const userName = await promptly.prompt('May I have your name?', { silent: true });
+  const userName = await promptly.prompt('May I have your name?');
   console.log(`Hello, ${userName}!`);
   console.log(gameRule);
 
